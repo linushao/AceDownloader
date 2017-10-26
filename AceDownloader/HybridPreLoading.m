@@ -21,7 +21,9 @@ static NSString * const hasInitKey = @"MyURLProtocolHandledKey";
     if ([request.URL.scheme isEqualToString:@"http"]) {
         NSString *str = request.URL.absoluteString;
         
-        if ([str containsString:@".mp4?sdtfrom="]) {
+        if ([str containsString:@".mp4?sdtfrom="])
+//        if ([HybridPreLoading rexString:str rex:@"*.mp4?sdtfrom=*" success:nil faild:nil])
+        {
             NSLog(@"%@", str);
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
             pasteboard.string = str;
@@ -29,11 +31,11 @@ static NSString * const hasInitKey = @"MyURLProtocolHandledKey";
             
             
             // 主线程执行：
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                // something
-//                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"找到一个视频" message:str delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
-//                [alert show];
-//            });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // something
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"找到一个视频" message:str delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil, nil];
+                [alert show];
+            });
         }
         
         NSArray *sourceArr = @[@"img", @"js", @"css"];
