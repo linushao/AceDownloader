@@ -16,7 +16,9 @@ singleton_implementation(AceDownloader)
 
 - (void)createDownloadWithURL:(NSString *)url
 {
-    [self test:123];
+//    [self test:123];
+    
+    [self download:url];
 }
 
 - (void)test:(NSInteger)vid
@@ -32,8 +34,8 @@ singleton_implementation(AceDownloader)
     NSLog(v_hash);
 }
 
-#if 0
-- (void)download
+#if 1
+- (void)download:(NSString *)url
 {
     
     //    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];

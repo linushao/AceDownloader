@@ -11,6 +11,7 @@ target 'AceDownloader' do
   pod 'YYCategories', '~> 1.0.4'
   pod 'YYModel', '~> 1.0.4'
   pod 'YYCache', '~> 1.0.4'
+  pod 'Masonry', '~> 1.0.2'
 #  pod 'YTKKeyValueStore', '~> 0.1.2'
 
 end

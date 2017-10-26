@@ -14,6 +14,8 @@
 		0BF416BC1FA1782C006341E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF416BB1FA1782C006341E2 /* Assets.xcassets */; };
 		0BF416BF1FA1782C006341E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BF416BD1FA1782C006341E2 /* LaunchScreen.storyboard */; };
 		0BF416C91FA178A9006341E2 /* AceDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416C81FA178A9006341E2 /* AceDownloader.m */; };
+		50A54AD91FA233BE0040C15A /* HybridPreLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A54AD71FA233BE0040C15A /* HybridPreLoading.m */; };
+		50A54ADC1FA23E630040C15A /* AceDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A54ADB1FA23E630040C15A /* AceDownloadViewController.m */; };
 		6F81E43B11377803B99ADB00 /* libPods-AceDownloader.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C3A040127E4127CAF6C5C6 /* libPods-AceDownloader.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,10 @@
 		0BF416C71FA178A9006341E2 /* AceDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceDownloader.h; sourceTree = "<group>"; };
 		0BF416C81FA178A9006341E2 /* AceDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AceDownloader.m; sourceTree = "<group>"; };
 		21C3A040127E4127CAF6C5C6 /* libPods-AceDownloader.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AceDownloader.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A54AD71FA233BE0040C15A /* HybridPreLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HybridPreLoading.m; sourceTree = "<group>"; };
+		50A54AD81FA233BE0040C15A /* HybridPreLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HybridPreLoading.h; sourceTree = "<group>"; };
+		50A54ADA1FA23E630040C15A /* AceDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AceDownloadViewController.h; sourceTree = "<group>"; };
+		50A54ADB1FA23E630040C15A /* AceDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AceDownloadViewController.m; sourceTree = "<group>"; };
 		AB68DF42565F7254106C0022 /* Pods-AceDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AceDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-AceDownloader/Pods-AceDownloader.release.xcconfig"; sourceTree = "<group>"; };
 		BE19F96DD3D476F25E374B56 /* Pods-AceDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AceDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AceDownloader/Pods-AceDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +75,8 @@
 		0BF416AE1FA1782B006341E2 /* AceDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				50A54AD81FA233BE0040C15A /* HybridPreLoading.h */,
+				50A54AD71FA233BE0040C15A /* HybridPreLoading.m */,
 				0BF416C61FA1787B006341E2 /* Downloader */,
 				0BF416B21FA1782C006341E2 /* AppDelegate.h */,
 				0BF416B31FA1782C006341E2 /* AppDelegate.m */,
@@ -97,6 +105,8 @@
 				0B650FAE1FA1804800769EA7 /* Singleton.h */,
 				0BF416C71FA178A9006341E2 /* AceDownloader.h */,
 				0BF416C81FA178A9006341E2 /* AceDownloader.m */,
+				50A54ADA1FA23E630040C15A /* AceDownloadViewController.h */,
+				50A54ADB1FA23E630040C15A /* AceDownloadViewController.m */,
 			);
 			name = Downloader;
 			sourceTree = "<group>";
@@ -195,13 +205,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AceDownloader-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB3AEDAA0694691C3F354145 /* [CP] Embed Pods Frameworks */ = {
@@ -241,10 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A54ADC1FA23E630040C15A /* AceDownloadViewController.m in Sources */,
 				0BF416B71FA1782C006341E2 /* ViewController.m in Sources */,
 				0BF416B41FA1782C006341E2 /* AppDelegate.m in Sources */,
 				0BF416C91FA178A9006341E2 /* AceDownloader.m in Sources */,
 				0BF416B11FA1782C006341E2 /* main.m in Sources */,
+				50A54AD91FA233BE0040C15A /* HybridPreLoading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
