@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B447E3C1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B447E391FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib */; };
+		0B447E3D1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B447E3A1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m */; };
 		0BF416B11FA1782C006341E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416B01FA1782C006341E2 /* main.m */; };
 		0BF416B41FA1782C006341E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416B31FA1782C006341E2 /* AppDelegate.m */; };
 		0BF416B71FA1782C006341E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416B61FA1782C006341E2 /* ViewController.m */; };
@@ -20,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B447E391FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSURLSessionOfflineResumeDownloadFileViewController.xib; sourceTree = "<group>"; };
+		0B447E3A1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionOfflineResumeDownloadFileViewController.m; sourceTree = "<group>"; };
+		0B447E3B1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLSessionOfflineResumeDownloadFileViewController.h; sourceTree = "<group>"; };
 		0B650FAE1FA1804800769EA7 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		0BF416AC1FA1782B006341E2 /* AceDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AceDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF416B01FA1782C006341E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -54,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B447E381FA2DF6C006A2F56 /* 使用NSURLSession断点下载（支持离线） */ = {
+			isa = PBXGroup;
+			children = (
+				0B447E3B1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.h */,
+				0B447E3A1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m */,
+				0B447E391FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib */,
+			);
+			name = "使用NSURLSession断点下载（支持离线）";
+			sourceTree = "<group>";
+		};
 		0BF416A31FA1782A006341E2 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +90,7 @@
 		0BF416AE1FA1782B006341E2 /* AceDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				0B447E381FA2DF6C006A2F56 /* 使用NSURLSession断点下载（支持离线） */,
 				50A54AD81FA233BE0040C15A /* HybridPreLoading.h */,
 				50A54AD71FA233BE0040C15A /* HybridPreLoading.m */,
 				0BF416C61FA1787B006341E2 /* Downloader */,
@@ -193,6 +209,7 @@
 				0BF416BF1FA1782C006341E2 /* LaunchScreen.storyboard in Resources */,
 				0BF416BC1FA1782C006341E2 /* Assets.xcassets in Resources */,
 				0BF416BA1FA1782C006341E2 /* Main.storyboard in Resources */,
+				0B447E3C1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +274,7 @@
 				50A54ADC1FA23E630040C15A /* AceDownloadViewController.m in Sources */,
 				0BF416B71FA1782C006341E2 /* ViewController.m in Sources */,
 				0BF416B41FA1782C006341E2 /* AppDelegate.m in Sources */,
+				0B447E3D1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m in Sources */,
 				0BF416C91FA178A9006341E2 /* AceDownloader.m in Sources */,
 				0BF416B11FA1782C006341E2 /* main.m in Sources */,
 				50A54AD91FA233BE0040C15A /* HybridPreLoading.m in Sources */,

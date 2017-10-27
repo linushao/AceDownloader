@@ -10,6 +10,23 @@
 #import <AFNetworking.h>
 #import <YYCategories.h>
 
+@interface AceDownloader ()
+
+/** AFNetworking断点下载（支持离线）需用到的属性 **********/
+/** 文件的总长度 */
+@property (nonatomic, assign) NSInteger fileLength;
+/** 当前下载长度 */
+@property (nonatomic, assign) NSInteger currentLength;
+/** 文件句柄对象 */
+@property (nonatomic, strong) NSFileHandle *fileHandle;
+
+/** 下载任务 */
+@property (nonatomic, strong) NSURLSessionDataTask *downloadTask;
+/* AFURLSessionManager */
+@property (nonatomic, strong) AFURLSessionManager *manager;
+
+@end
+
 @implementation AceDownloader
 
 singleton_implementation(AceDownloader)
@@ -21,6 +38,8 @@ singleton_implementation(AceDownloader)
     [self download:url];
 }
 
+
+#if 0
 - (void)test:(NSInteger)vid
 {
     NSTimeInterval date = [[NSDate date] timeIntervalSince1970];
@@ -33,6 +52,7 @@ singleton_implementation(AceDownloader)
     
     NSLog(v_hash);
 }
+#endif
 
 #if 1
 - (void)download:(NSString *)url
@@ -94,7 +114,30 @@ singleton_implementation(AceDownloader)
     
     // 4. 开启下载任务
     [downloadTask resume];
+    
+    
+    
+//    [downloadTask suspend];
 }
 #endif
+
+
+
+
+/**
+ * 获取已下载的文件大小
+ */
+- (NSInteger)fileLengthForPath:(NSString *)path {
+    NSInteger fileLength = 0;
+    NSFileManager *fileManager = [[NSFileManager alloc] init]; // default is not thread safe
+    if ([fileManager fileExistsAtPath:path]) {
+        NSError *error = nil;
+        NSDictionary *fileDict = [fileManager attributesOfItemAtPath:path error:&error];
+        if (!error && fileDict) {
+            fileLength = [fileDict fileSize];
+        }
+    }
+    return fileLength;
+}
 
 @end

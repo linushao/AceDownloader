@@ -38,6 +38,9 @@
     
     self.urlTextField.backgroundColor = [UIColor redColor];
     
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    self.urlTextField.text = pasteboard.string;
+    
     [self.urlTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(20);
         make.right.offset(-20);
