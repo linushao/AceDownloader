@@ -33,13 +33,13 @@ singleton_implementation(AceDownloader)
 
 - (void)createDownloadWithURL:(NSString *)url
 {
-//    [self test:123];
+//    [self test:65446];
     
     [self download:url];
 }
 
 
-#if 0
+#if 1
 - (void)test:(NSInteger)vid
 {
     NSTimeInterval date = [[NSDate date] timeIntervalSince1970];
@@ -50,9 +50,29 @@ singleton_implementation(AceDownloader)
     v_hash = [v_hash md5String];
     v_hash = [v_hash base64EncodedString];
     
-    NSLog(v_hash);
+    
+    NSString *base_url = [NSString stringWithFormat:@"https://avgle.com/mp4.php?vid=%ld&ts=%.0f&hash=%@", vid, date, v_hash];
+    
+    NSLog(base_url);
+    
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain", @"text/json", @"application/json", @"text/javascript", @"text/html",  nil];
+    
+    
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    [manager GET:base_url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 #endif
+
+
 
 #if 1
 - (void)download:(NSString *)url

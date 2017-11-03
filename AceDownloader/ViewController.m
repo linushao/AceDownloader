@@ -11,6 +11,7 @@
 #import "HybridPreLoading.h"
 #import "AceDownloadViewController.h"
 #import "NSURLSessionOfflineResumeDownloadFileViewController.h"
+#import "DownloadTableViewController.h"
 
 @interface ViewController ()<UIWebViewDelegate>
 
@@ -50,7 +51,10 @@
 
 - (void)goDownloadVC
 {
-    AceDownloadViewController *vc = [[AceDownloadViewController alloc] init];
+//    AceDownloadViewController *vc = [[AceDownloadViewController alloc] init];
+    
+    DownloadTableViewController *vc = [[DownloadTableViewController alloc] init];
+    
     [self.navigationController pushViewController:vc animated:YES];
     
 //    NSURLSessionOfflineResumeDownloadFileViewController *VC = [[NSURLSessionOfflineResumeDownloadFileViewController alloc] init];
@@ -73,7 +77,7 @@
     
     
 //    NSString *webURL = @"http://172.16.26.13:5000";
-    NSString *webURL = @"http://m.halihali.tv/v/shituxingzhe2yueyuban/0-10.html";
+    NSString *webURL = @"http://m.halihali.tv/v/shituxingzhe2yueyuban/0-30.html";
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:webURL]];
     [webView loadRequest:request];
     

@@ -21,7 +21,7 @@ static NSString * const hasInitKey = @"MyURLProtocolHandledKey";
     if ([request.URL.scheme isEqualToString:@"http"]) {
         NSString *str = request.URL.absoluteString;
         
-        if ([str containsString:@".mp4?sdtfrom="])
+        if ([str containsString:@".mp4"])
 //        if ([HybridPreLoading rexString:str rex:@"*.mp4?sdtfrom=*" success:nil faild:nil])
         {
             NSLog(@"%@", str);

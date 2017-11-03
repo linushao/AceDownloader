@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B447E3C1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B447E391FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib */; };
 		0B447E3D1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B447E3A1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m */; };
+		0B447E401FA307BA006A2F56 /* DownloadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B447E3F1FA307BA006A2F56 /* DownloadTableViewController.m */; };
+		0B447E431FA33263006A2F56 /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B447E421FA33263006A2F56 /* DownloadTableViewCell.m */; };
 		0BF416B11FA1782C006341E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416B01FA1782C006341E2 /* main.m */; };
 		0BF416B41FA1782C006341E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416B31FA1782C006341E2 /* AppDelegate.m */; };
 		0BF416B71FA1782C006341E2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BF416B61FA1782C006341E2 /* ViewController.m */; };
@@ -25,6 +27,10 @@
 		0B447E391FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSURLSessionOfflineResumeDownloadFileViewController.xib; sourceTree = "<group>"; };
 		0B447E3A1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionOfflineResumeDownloadFileViewController.m; sourceTree = "<group>"; };
 		0B447E3B1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLSessionOfflineResumeDownloadFileViewController.h; sourceTree = "<group>"; };
+		0B447E3E1FA307BA006A2F56 /* DownloadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTableViewController.h; sourceTree = "<group>"; };
+		0B447E3F1FA307BA006A2F56 /* DownloadTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTableViewController.m; sourceTree = "<group>"; };
+		0B447E411FA33263006A2F56 /* DownloadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTableViewCell.h; sourceTree = "<group>"; };
+		0B447E421FA33263006A2F56 /* DownloadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTableViewCell.m; sourceTree = "<group>"; };
 		0B650FAE1FA1804800769EA7 /* Singleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		0BF416AC1FA1782B006341E2 /* AceDownloader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AceDownloader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF416B01FA1782C006341E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,6 +127,10 @@
 				0B650FAE1FA1804800769EA7 /* Singleton.h */,
 				0BF416C71FA178A9006341E2 /* AceDownloader.h */,
 				0BF416C81FA178A9006341E2 /* AceDownloader.m */,
+				0B447E3E1FA307BA006A2F56 /* DownloadTableViewController.h */,
+				0B447E3F1FA307BA006A2F56 /* DownloadTableViewController.m */,
+				0B447E411FA33263006A2F56 /* DownloadTableViewCell.h */,
+				0B447E421FA33263006A2F56 /* DownloadTableViewCell.m */,
 				50A54ADA1FA23E630040C15A /* AceDownloadViewController.h */,
 				50A54ADB1FA23E630040C15A /* AceDownloadViewController.m */,
 			);
@@ -273,11 +283,13 @@
 			files = (
 				50A54ADC1FA23E630040C15A /* AceDownloadViewController.m in Sources */,
 				0BF416B71FA1782C006341E2 /* ViewController.m in Sources */,
+				0B447E431FA33263006A2F56 /* DownloadTableViewCell.m in Sources */,
 				0BF416B41FA1782C006341E2 /* AppDelegate.m in Sources */,
 				0B447E3D1FA2DF8A006A2F56 /* NSURLSessionOfflineResumeDownloadFileViewController.m in Sources */,
 				0BF416C91FA178A9006341E2 /* AceDownloader.m in Sources */,
 				0BF416B11FA1782C006341E2 /* main.m in Sources */,
 				50A54AD91FA233BE0040C15A /* HybridPreLoading.m in Sources */,
+				0B447E401FA307BA006A2F56 /* DownloadTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
